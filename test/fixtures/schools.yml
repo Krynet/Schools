@@ -1,0 +1,27 @@
+one:
+  id: 1
+  name: "public school"
+  address: "25 rue foch"
+  zip_code: "69006"
+  city: "Lyon"
+  openings: "some string about opening hours"
+  phone: "062012467"
+  email: "email@domain.com"
+  nb_student: 42
+  status: "public"
+  latitude: 45.76543
+  longitude: 45.8765
+
+two:
+  id: 2
+  name: "private school"
+  address: "25 rue foch"
+  zip_code: "69006"
+  city: "Lyon"
+  openings: "some string about opening hours"
+  phone: "062012467"
+  email: "email@domain.com"
+  nb_student: 42
+  status: "private"
+  latitude: 45.76543
+  longitude: 45.8765

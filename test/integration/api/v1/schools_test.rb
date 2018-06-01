@@ -104,7 +104,7 @@ feature "Schools" do
   end
 
   describe "#destroy" do
-focus
+
     it "rerturn true when school is delete" do
       assert_difference "School.all.count", -1 do
 

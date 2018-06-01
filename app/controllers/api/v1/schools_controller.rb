@@ -2,22 +2,20 @@ class Api::V1::SchoolsController < Api::ApiController
 
   # DOC GENERATED AUTOMATICALLY: REMOVE THIS LINE TO PREVENT REGENARATING NEXT TIME
   api :GET, '/v1/schools', 'List schools'
-  param :status, :undef
   error code: 401
   def index
 
     @schools = School.filter(params)
 
   end
+
   api :GET, '/v1/schools/:id', 'School by id'
-  param :id, :number, :required => true
   def show
     @school = School.find(params[:id])
     render json: {success: true, school: @school}.to_json
   end
 
   api :DELETE, '/v1/schools', 'Delete school'
-  param :id, :number, :required => true
   def destroy
     @school = School.find(params[:id])
     @school.destroy
@@ -29,8 +27,7 @@ class Api::V1::SchoolsController < Api::ApiController
   end
 
   api :POST, '/v1/schools', 'Create school'
-  param :name, String, :required => true
-  param :email, String, :required => true
+
 
   def create
   @school = School.create(school_params)
@@ -43,8 +40,7 @@ class Api::V1::SchoolsController < Api::ApiController
   end
 
   api :PUT, '/v1/schools', 'Update School'
-  param :name, String, :required => true
-  param :email, String, :required => true
+
   def update
     @school = School.find(params[:id])
     @school.update_attributes(school_params)
@@ -72,6 +68,4 @@ class Api::V1::SchoolsController < Api::ApiController
     :email
     )
   end
-
-
 end
